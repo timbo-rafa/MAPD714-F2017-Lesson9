@@ -5,7 +5,7 @@ class RootViewController: UITableViewController {
     private var familyNames: [String]!
     private var cellPointSize: CGFloat!
     private var favouritesList: FavouritesList!
-    private static let familyCell = "familyName"
+    private static let familyCell = "FamilyName"
     private static let favouritesCell = "Favourites"
     
     // this application event triggers every time the view is going to be rendered
