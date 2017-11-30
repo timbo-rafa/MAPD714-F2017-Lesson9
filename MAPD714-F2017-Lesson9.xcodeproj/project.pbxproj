@@ -13,6 +13,7 @@
 		3FF04D9C1FCF841E0091DA7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF04D9A1FCF841E0091DA7E /* LaunchScreen.storyboard */; };
 		3FF04DA41FCF89520091DA7E /* FavouritesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF04DA31FCF89520091DA7E /* FavouritesList.swift */; };
 		3FF04DA81FCF8FCA0091DA7E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF04DA71FCF8FCA0091DA7E /* RootViewController.swift */; };
+		3FF04DAA1FCFA3010091DA7E /* FontListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF04DA91FCFA3010091DA7E /* FontListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		3FF04D9D1FCF841E0091DA7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FF04DA31FCF89520091DA7E /* FavouritesList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesList.swift; sourceTree = "<group>"; };
 		3FF04DA71FCF8FCA0091DA7E /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		3FF04DA91FCFA3010091DA7E /* FontListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				3FF04D9A1FCF841E0091DA7E /* LaunchScreen.storyboard */,
 				3FF04D9D1FCF841E0091DA7E /* Info.plist */,
 				3FF04DA31FCF89520091DA7E /* FavouritesList.swift */,
+				3FF04DA91FCFA3010091DA7E /* FontListViewController.swift */,
 			);
 			path = "MAPD714-F2017-Lesson9";
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FF04DA41FCF89520091DA7E /* FavouritesList.swift in Sources */,
+				3FF04DAA1FCFA3010091DA7E /* FontListViewController.swift in Sources */,
 				3FF04D921FCF841E0091DA7E /* AppDelegate.swift in Sources */,
 				3FF04DA81FCF8FCA0091DA7E /* RootViewController.swift in Sources */,
 			);
