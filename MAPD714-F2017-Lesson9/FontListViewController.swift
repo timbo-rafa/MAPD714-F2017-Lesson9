@@ -22,6 +22,9 @@ class FontListViewController: UITableViewController {
         cellPointSize = preferredTableViewFont.pointSize
         tableView.estimatedRowHeight = cellPointSize
         
+        if showsFavourites {
+            navigationItem.rightBarButtonItem = editButtonItem
+        }
     }
     
     func fontForDisplay(atIndexPath indexPath: NSIndexPath) -> UIFont {
@@ -43,6 +46,11 @@ class FontListViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        FavouritesList.SharedFavouritesList.moveItem(fromIndex: sourceIndexPath.row, toIndex: destinationIndexPath.row)
+        fontNames = FavouritesList.SharedFavouritesList.favourites
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destination]
         // Pass the selected object to the new view controller
@@ -50,8 +58,15 @@ class FontListViewController: UITableViewController {
         let indexPath = tableView.indexPath(for: tableViewCell)!
         let font = fontForDisplay(atIndexPath: indexPath as NSIndexPath)
         
-        let sizesVC = segue.destination as! FontSizesViewController
-        sizesVC.title = font.fontName
-        sizesVC.font = font
+        if segue.identifier == "ShowFontSizes" {
+            let sizesVC = segue.destination as! FontSizesViewController
+            sizesVC.title = font.fontName
+            sizesVC.font = font
+        } else {
+            let infoVC = segue.destination as! FontInfoViewController
+            infoVC.title = font.fontName
+            infoVC.font = font
+            infoVC.favourite = FavouritesList.SharedFavouritesList.favourites.contains(font.fontName)
+        }
     }
 }

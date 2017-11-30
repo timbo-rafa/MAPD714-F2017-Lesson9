@@ -107,7 +107,8 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="6W4-iJ-g69" kind="show" id="mG9-Gx-boD"/>
+                                    <segue destination="6W4-iJ-g69" kind="show" identifier="ShowFontSizes" id="mG9-Gx-boD"/>
+                                    <segue destination="hEH-1X-A7N" kind="show" identifier="ShowFontInfo" trigger="accessoryAction" id="yre-aT-46X"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -120,6 +121,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C7A-6s-hJS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1063" y="80"/>
+        </scene>
+        <!--Font Info View Controller-->
+        <scene sceneID="arX-ss-LAT">
+            <objects>
+                <viewController id="hEH-1X-A7N" customClass="FontInfoViewController" customModule="MAPD714_F2017_Lesson9" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Lh-G2-zV8"/>
+                        <viewControllerLayoutGuide type="bottom" id="w4o-WA-3Fj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LUa-70-fuV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CY2-RV-R76">
+                                <rect key="frame" x="334" y="634" width="32" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="12" minValue="1" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="nuW-Cu-6i7">
+                                <rect key="frame" x="-2" y="629" width="310" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="slideFontSizeWithSlider:" destination="hEH-1X-A7N" eventType="valueChanged" id="7Mx-DW-vUd"/>
+                                </connections>
+                            </slider>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sok-OU-VX6">
+                                <rect key="frame" x="317" y="583" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="toggleFavouriteWithSender:" destination="hEH-1X-A7N" eventType="valueChanged" id="B8w-ua-uMc"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bX2-pi-0XV">
+                                <rect key="frame" x="16" y="293" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Include in Favourites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0kO-UB-L8J">
+                                <rect key="frame" x="149" y="588" width="157" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="favouriteSwitch" destination="Sok-OU-VX6" id="qK2-dU-dvJ"/>
+                        <outlet property="fontSampleLabel" destination="bX2-pi-0XV" id="EpY-ca-gyp"/>
+                        <outlet property="fontSizeLabel" destination="CY2-RV-R76" id="SzZ-kl-dTN"/>
+                        <outlet property="fontSizeSlider" destination="nuW-Cu-6i7" id="wWl-3V-v1S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="efs-iB-Kn2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1842.4000000000001" y="-573.46326836581716"/>
         </scene>
         <!--Font Sizes View Controller-->
         <scene sceneID="4Xc-Ep-qes">

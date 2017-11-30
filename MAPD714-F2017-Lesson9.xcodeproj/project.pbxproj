@@ -15,6 +15,7 @@
 		3FF04DA81FCF8FCA0091DA7E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF04DA71FCF8FCA0091DA7E /* RootViewController.swift */; };
 		3FF04DAA1FCFA3010091DA7E /* FontListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF04DA91FCFA3010091DA7E /* FontListViewController.swift */; };
 		3FF04DAC1FCFAC9A0091DA7E /* FontSizesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF04DAB1FCFAC9A0091DA7E /* FontSizesViewController.swift */; };
+		3FF04DAE1FCFB0190091DA7E /* FontInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF04DAD1FCFB0190091DA7E /* FontInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		3FF04DA71FCF8FCA0091DA7E /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		3FF04DA91FCFA3010091DA7E /* FontListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontListViewController.swift; sourceTree = "<group>"; };
 		3FF04DAB1FCFAC9A0091DA7E /* FontSizesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontSizesViewController.swift; sourceTree = "<group>"; };
+		3FF04DAD1FCFB0190091DA7E /* FontInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				3FF04DA31FCF89520091DA7E /* FavouritesList.swift */,
 				3FF04DA91FCFA3010091DA7E /* FontListViewController.swift */,
 				3FF04DAB1FCFAC9A0091DA7E /* FontSizesViewController.swift */,
+				3FF04DAD1FCFB0190091DA7E /* FontInfoViewController.swift */,
 			);
 			path = "MAPD714-F2017-Lesson9";
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 				3FF04DAC1FCFAC9A0091DA7E /* FontSizesViewController.swift in Sources */,
 				3FF04DA41FCF89520091DA7E /* FavouritesList.swift in Sources */,
 				3FF04DAA1FCFA3010091DA7E /* FontListViewController.swift in Sources */,
+				3FF04DAE1FCFB0190091DA7E /* FontInfoViewController.swift in Sources */,
 				3FF04D921FCF841E0091DA7E /* AppDelegate.swift in Sources */,
 				3FF04DA81FCF8FCA0091DA7E /* RootViewController.swift in Sources */,
 			);

@@ -30,11 +30,18 @@ class FavouritesList {
     }
     
     // this method removes a favourite font from the user preferences file
-    private func removeFavourites(fontName: String) {
+    func removeFavourite(fontName: String) {
         // if let: type guard, checks to see if index exists (error checking)
         if let index = favourites.index(of: fontName) {
             favourites.remove(at: index)
             saveFavourites()
         }
+    }
+    
+    func moveItem(fromIndex from: Int, toIndex to: Int) {
+        let item = favourites[from]
+        favourites.remove(at: from)
+        favourites.insert(item, at: to)
+        saveFavourites()
     }
 }
