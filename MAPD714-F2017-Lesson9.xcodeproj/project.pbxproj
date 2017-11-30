@@ -12,6 +12,7 @@
 		3FF04D991FCF841E0091DA7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FF04D981FCF841E0091DA7E /* Assets.xcassets */; };
 		3FF04D9C1FCF841E0091DA7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF04D9A1FCF841E0091DA7E /* LaunchScreen.storyboard */; };
 		3FF04DA41FCF89520091DA7E /* FavouritesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF04DA31FCF89520091DA7E /* FavouritesList.swift */; };
+		3FF04DA81FCF8FCA0091DA7E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF04DA71FCF8FCA0091DA7E /* RootViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		3FF04D9B1FCF841E0091DA7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FF04D9D1FCF841E0091DA7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FF04DA31FCF89520091DA7E /* FavouritesList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesList.swift; sourceTree = "<group>"; };
+		3FF04DA71FCF8FCA0091DA7E /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				3FF04D911FCF841E0091DA7E /* AppDelegate.swift */,
 				3FF04D951FCF841E0091DA7E /* Main.storyboard */,
+				3FF04DA71FCF8FCA0091DA7E /* RootViewController.swift */,
 				3FF04D981FCF841E0091DA7E /* Assets.xcassets */,
 				3FF04D9A1FCF841E0091DA7E /* LaunchScreen.storyboard */,
 				3FF04D9D1FCF841E0091DA7E /* Info.plist */,
@@ -139,6 +142,7 @@
 			files = (
 				3FF04DA41FCF89520091DA7E /* FavouritesList.swift in Sources */,
 				3FF04D921FCF841E0091DA7E /* AppDelegate.swift in Sources */,
+				3FF04DA81FCF8FCA0091DA7E /* RootViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
