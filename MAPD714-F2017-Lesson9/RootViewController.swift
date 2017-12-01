@@ -33,7 +33,10 @@ class RootViewController: UITableViewController {
             let fontName = UIFont.fontNames(forFamilyName: familyName).first
             return fontName != nil ? UIFont(name: fontName!, size: cellPointSize) : nil
         } else {
-          return nil
+            //let familyName = favouritesList.favourites[indexPath.row]
+            //let fontName = UIFont.fontNames(forFamilyName: familyName).first
+            //return fontName != nil ? UIFont(name: fontName!, size: cellPointSize) : nil
+            return nil
         }
     }
     
@@ -62,7 +65,12 @@ class RootViewController: UITableViewController {
             return cell
         } else {
             // the favourites list
-            return tableView.dequeueReusableCell(withIdentifier: RootViewController.favouritesCell, for: indexPath)
+            //return tableView.dequeueReusableCell(withIdentifier: RootViewController.favouritesCell, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: RootViewController.favouritesCell, for: indexPath)
+            //cell.textLabel?.font = fontForDisplay(atIndexPath: indexPath as NSIndexPath)
+            //cell.textLabel?.text = familyNames[indexPath.row]
+            //cell.detailTextLabel?.text = familyNames[indexPath.row]
+            return cell
         }
     }
     
