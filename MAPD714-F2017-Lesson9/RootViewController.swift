@@ -1,6 +1,6 @@
 import UIKit
 
-class RootViewController: UITableViewController {
+class RootViewController: UITableViewController, UITextFieldDelegate {
 
     //private var familyNames: [String]!
     //private var cellPointSize: CGFloat!
@@ -20,29 +20,10 @@ class RootViewController: UITableViewController {
     // this application event triggers the first time the application is loaded
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //familyNames = (UIFont.familyNames as [String]).sorted() //(?) book outdated
-        //let preferredTableViewFont =
-        //    UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline) // book outdated
-        //cellPointSize = preferredTableViewFont.pointSize
-        //favouritesList = FavouritesList.SharedFavouritesList
-        //tableView.estimatedRowHeight = cellPointSize
         
         remembrList = RemembrList.SharedRemembrList
         listTitle = remembrList.listTitle
     }
-    
-    /*
-    func fontForDisplay(atIndexPath indexPath: NSIndexPath ) -> UIFont? {
-        if indexPath.section == 0 {
-            let familyName = familyNames[indexPath.row]
-            let fontName = UIFont.fontNames(forFamilyName: familyName).first
-            return fontName != nil ? UIFont(name: fontName!, size: cellPointSize) : nil
-        } else {
-            return nil
-        }
-    }
-    */
     
     //data source methods
     
@@ -63,45 +44,13 @@ class RootViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: RootViewController.remembrCell, for: indexPath)
-        cell.textLabel?.text = remembrList.list[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: RootViewController.remembrCell, for: indexPath) as! CustomCellTableViewCell
+        cell.CellText.delegate = self
         return cell
         
-        /*
-        if indexPath.section == 0  {
-            // the font names list
-            let cell = tableView.dequeueReusableCell(withIdentifier: RootViewController.familyCell, for: indexPath)
-            cell.textLabel?.font = fontForDisplay(atIndexPath: indexPath as NSIndexPath)
-            cell.textLabel?.text = familyNames[indexPath.row]
-            cell.detailTextLabel?.text = familyNames[indexPath.row]
-            return cell
-        } else {
-            // the favourites list
-            let cell = tableView.dequeueReusableCell(withIdentifier: RootViewController.favouritesCell, for: indexPath)
-            return cell
-        }
-        */
     }
     
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destionationViewController]
-        // Pass the selected object to the new view controller
-        let indexPath = tableView.indexPath(for: sender as! UITableViewCell)!
-        let listVC = segue.destination as! FontListViewController //(?) book outdated
+    func textFieldDidEndEditing(_ textField: UITextField) {
         
-        if indexPath.section == 0 {
-            // Font names list
-            let familyName = familyNames[indexPath.row]
-            listVC.fontNames = (UIFont.fontNames(forFamilyName: familyName) as [String]).sorted()
-            listVC.navigationItem.title = familyName
-            listVC.showsFavourites = false
-        } else {
-            // Favourites list
-            listVC.fontNames = favouritesList.favourites
-            listVC.navigationItem.title = "Favourites"
-            listVC.showsFavourites = true
-        }
     }
-    */
 }
