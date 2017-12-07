@@ -53,7 +53,7 @@ class RootViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return the number of rows in the section.
-        return remembrList.list.count
+        return 5 //remembrList.list.count
         //return section == 0 ? familyNames.count : 1
     }
     

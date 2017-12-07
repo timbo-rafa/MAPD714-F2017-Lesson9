@@ -11,11 +11,13 @@ class RemembrList {
     
     private(set) var listTitle:String
     
+    private let defaultItems = [ "Item 1", "Item 2", "Item 3", "Item 4", "Item 5"]
+    
     init() {
         let defaults = UserDefaults.standard
         
         let storedList = defaults.object(forKey: "remembrList") as? [String]
-        list = storedList != nil ? storedList! : []
+        list = storedList != nil ? storedList! : defaultItems
         
         let storedTitle = defaults.object(forKey: "remembrTitle") as? String
         listTitle = storedTitle != nil ? storedTitle! : "RememBR List"
