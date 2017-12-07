@@ -9,11 +9,16 @@ class RemembrList {
     private(set) var list:[String]
     //private(set) var favourites:[String]
     
+    private(set) var listTitle:String
     
     init() {
         let defaults = UserDefaults.standard
+        
         let storedList = defaults.object(forKey: "remembrList") as? [String]
         list = storedList != nil ? storedList! : []
+        
+        let storedTitle = defaults.object(forKey: "remembrTitle") as? String
+        listTitle = storedTitle != nil ? storedTitle! : "RememBR List"
     }
     
     // This method adds an item to the list
@@ -22,6 +27,18 @@ class RemembrList {
             list.append(item)
             saveList()
         }
+    }
+    
+    // This method changes the title of the list
+    func addTitle(title: String) {
+        listTitle = title
+        saveTitle()
+    }
+    
+    // This method saves the title of the list
+    private func saveTitle() {
+        let defaults = UserDefaults.standard
+        defaults.set(listTitle, forKey: "remembrTitle")
     }
     
     // This method saves the list to a file
@@ -39,6 +56,7 @@ class RemembrList {
         }
     }
     
+    // this method changes an item's position on the list
     func moveItem(fromIndex from: Int, toIndex to: Int) {
         let item = list[from]
         list.remove(at: from)
