@@ -20,7 +20,6 @@ class RootViewController: UITableViewController, UITextFieldDelegate {
     // this application event triggers the first time the application is loaded
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         remembrList = RemembrList.SharedRemembrList
         listTitle = remembrList.listTitle
     }
@@ -46,6 +45,7 @@ class RootViewController: UITableViewController, UITextFieldDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RootViewController.remembrCell, for: indexPath) as! CustomCellTableViewCell
         cell.CellText.delegate = self
+        
         return cell
         
     }

@@ -9,9 +9,11 @@ class RemembrList {
     private(set) var list:[String]
     //private(set) var favourites:[String]
     
+    private(set) var quantity:[Integer]
     private(set) var listTitle:String
     
     private let defaultItems = [ "Item 1", "Item 2", "Item 3", "Item 4", "Item 5"]
+    private let defaultQuantity = [ 5, 5, 5, 5, 5]
     
     init() {
         let defaults = UserDefaults.standard
@@ -21,6 +23,15 @@ class RemembrList {
         
         let storedTitle = defaults.object(forKey: "remembrTitle") as? String
         listTitle = storedTitle != nil ? storedTitle! : "RememBR List"
+        
+        let storedQuantity = defaults.object(forKey: "remembrQuantity") as? [Integer]
+        
+        quantity = storedQuantity != nil ? storedQuantity! : defaultQuantity
+        
+    }
+    
+    func addQuantity(quantity: Integer) {
+        
     }
     
     // This method adds an item to the list
