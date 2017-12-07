@@ -2,11 +2,14 @@ import UIKit
 
 class RootViewController: UITableViewController {
 
-    private var familyNames: [String]!
-    private var cellPointSize: CGFloat!
-    private var favouritesList: FavouritesList!
-    private static let familyCell = "FamilyName"
-    private static let favouritesCell = "Favourites"
+    //private var familyNames: [String]!
+    //private var cellPointSize: CGFloat!
+    //private var favouritesList: FavouritesList!
+    private var remembrList: RemembrList!
+    private var listTitle: String = "RememBR List" // pegar do remembrList
+    //private static let familyCell = "FamilyName"
+    private static let remembrCell = "RemembrCell"
+    //private static let favouritesCell = "Favourites"
     
     // this application event triggers every time the view is going to be rendered
     override func viewWillAppear(_ animated: Bool) {
@@ -18,15 +21,18 @@ class RootViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        familyNames = (UIFont.familyNames as [String]).sorted() //(?) book outdated
-        let preferredTableViewFont =
-            UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline) // book outdated
-        cellPointSize = preferredTableViewFont.pointSize
-        favouritesList = FavouritesList.SharedFavouritesList
-        tableView.estimatedRowHeight = cellPointSize
+        //familyNames = (UIFont.familyNames as [String]).sorted() //(?) book outdated
+        //let preferredTableViewFont =
+        //    UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline) // book outdated
+        //cellPointSize = preferredTableViewFont.pointSize
+        //favouritesList = FavouritesList.SharedFavouritesList
+        //tableView.estimatedRowHeight = cellPointSize
         
+        remembrList = RemembrList.SharedRemembrList
+        listTitle = remembrList.listTitle
     }
     
+    /*
     func fontForDisplay(atIndexPath indexPath: NSIndexPath ) -> UIFont? {
         if indexPath.section == 0 {
             let familyName = familyNames[indexPath.row]
@@ -36,23 +42,32 @@ class RootViewController: UITableViewController {
             return nil
         }
     }
+    */
     
     //data source methods
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return favouritesList.favourites.isEmpty ? 1 : 2
+        return 1
+        //return favouritesList.favourites.isEmpty ? 1 : 2
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return the number of rows in the section.
-        return section == 0 ? familyNames.count : 1
+        return remembrList.list.count
+        //return section == 0 ? familyNames.count : 1
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return section == 0 ? "All Font Families" : "My Favourite Fonts"
+        return "RememBR List"
+        //return section == 0 ? "All Font Families" : "My Favourite Fonts"
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: RootViewController.remembrCell, for: indexPath)
+        cell.textLabel?.text = remembrList.list[indexPath.row]
+        return cell
+        
+        /*
         if indexPath.section == 0  {
             // the font names list
             let cell = tableView.dequeueReusableCell(withIdentifier: RootViewController.familyCell, for: indexPath)
@@ -65,8 +80,10 @@ class RootViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: RootViewController.favouritesCell, for: indexPath)
             return cell
         }
+        */
     }
     
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destionationViewController]
         // Pass the selected object to the new view controller
@@ -86,4 +103,5 @@ class RootViewController: UITableViewController {
             listVC.showsFavourites = true
         }
     }
+    */
 }
